@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud-Native Portfolio Case Study | Abdulrahman Alameer</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=4">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png?v=2">
+    <style>
+        .case-header { padding: 4rem 0; border-bottom: 1px solid #334155; margin-bottom: 3rem; }
+        .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; padding: 1.5rem; background: #1E293B; border-radius: 8px; border: 1px solid #334155; }
+        .meta-item h4 { color: #94A3B8; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .meta-item p { color: #fff; font-weight: 600; }
+        .content-section { margin-bottom: 4rem; }
+        .content-section h2 { color: var(--accent-blue); margin-bottom: 1.5rem; font-size: 1.5rem; }
+        .content-section p { margin-bottom: 1rem; color: #CBD5E1; }
+        .content-section ul { list-style: none; margin: 0 0 1.5rem 0; padding: 0; }
+        .content-section ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #CBD5E1; font-size: 0.95rem; line-height: 1.6; }
+        .content-section ul li::before { content: '>'; position: absolute; left: 0; color: #4285F4; font-family: var(--font-mono); font-weight: bold; }
+        .img-box { background: #0F172A; padding: 2rem; border-radius: 8px; margin: 2rem 0; border: 1px solid #334155; text-align: center; }
+        .img-box img { max-width: 100%; border-radius: 4px; }
+        .img-box p { color: #64748B; font-size: 0.9rem; margin-top: 1rem; }
+        .flow-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 2rem 0; }
+        @media (min-width: 768px) { .flow-grid { grid-template-columns: 1fr 1fr; } }
+        .flow-step { background: #1E293B; border: 1px solid #334155; border-radius: 8px; padding: 1.5rem; transition: all 0.3s ease; }
+        .flow-step:hover { border-color: #4285F4; transform: translateY(-3px); box-shadow: 0 10px 30px -10px rgba(66, 133, 244, 0.15); }
+        .flow-step .step-num { color: #4285F4; font-family: var(--font-mono); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+        .flow-step h3 { color: #fff; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .flow-step p { color: #94A3B8; font-size: 0.9rem; margin: 0; }
+        .tech-badge { display: inline-block; background: rgba(66, 133, 244, 0.1); border: 1px solid rgba(66, 133, 244, 0.3); color: #4285F4; padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; font-family: var(--font-mono); font-weight: 600; margin: 0.25rem; }
+        .back-nav { padding: 1.5rem 0; }
+        .back-nav a { color: #94A3B8; text-decoration: none; font-family: var(--font-mono); font-size: 0.9rem; transition: color 0.2s; }
+        .back-nav a:hover { color: var(--accent-blue); }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .case-header { padding: 1.5rem 0 2rem 0; margin-bottom: 2.5rem; }
+            .case-header h1 { font-size: 1.4rem !important; line-height: 1.3 !important; word-break: break-word; margin-top: 0.4rem !important; }
+            .case-header > p { font-size: 0.95rem !important; line-height: 1.5; }
+            .case-header .project-tag { font-size: 0.7rem; letter-spacing: 0.08em; }
+            .meta-grid { grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1rem; }
+            .meta-item h4 { font-size: 0.75rem; }
+            .meta-item p { font-size: 0.85rem; }
+            .content-section { margin-bottom: 2.5rem; }
+            .content-section h2 { font-size: 1.25rem; }
+            .content-section p { font-size: 0.92rem; }
+            .content-section ul li { font-size: 0.88rem; }
+            .img-box { padding: 1rem; margin: 1.5rem 0; }
+            .img-box p { font-size: 0.8rem; }
+            .flow-grid { gap: 1rem; }
+            .flow-step { padding: 1.2rem; }
+            .flow-step h3 { font-size: 1rem; }
+            .flow-step p { font-size: 0.85rem; }
+            .flow-step .step-num { font-size: 0.78rem; }
+            .code-snippet { font-size: 0.72rem; padding: 0.75rem; overflow-x: auto; }
+            .tech-badge { font-size: 0.72rem; padding: 3px 8px; }
+            .back-nav { padding: 1rem 0; }
+        }
+
+        @media (max-width: 400px) {
+            .meta-grid { grid-template-columns: 1fr; }
+            .case-header h1 { font-size: 1.2rem !important; line-height: 1.3 !important; }
+            .case-header > p { font-size: 0.88rem !important; }
+            .case-header .project-tag { font-size: 0.65rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+              <a href="/" class="logo"><span><img src="assest/1703752909678.jpg" class="image-logo"></span> </a>
+            <nav>
+                <ul>
+                    <li><a href="/" class="nav-link">&larr; Back</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container back-nav">
+    </div>
+
+    <div class="container case-header">
+        <span class="project-tag mono" style="color: #4285F4;">GCP &bull; Cloud Run &bull; Serverless</span>
+        <h1 style="font-size: 2.5rem; margin-top: 0.5rem;">Cloud-Native Portfolio Website</h1>
+        <p style="font-size: 1.2rem; color: #94A3B8; max-width: 700px; margin-top: 1rem;">A serverless, scalable personal portfolio deployed as a Docker container on Google Cloud Run using the gcloud CLI.</p>
+        <div class="meta-grid">
+            <div class="meta-item"><h4>Role</h4><p>Cloud Engineer</p></div>
+            <div class="meta-item"><h4>Stack</h4><p>Cloud Run, Artifact Registry, Docker</p></div>
+            <div class="meta-item"><h4>Deployment</h4><p>gcloud CLI</p></div>
+            <div class="meta-item"><h4>Outcome</h4><p>High Availability &bull; Near-Zero Cost</p></div>
+        </div>
+    </div>
+
+    <article class="container">
+
+        <div class="content-section">
+            <h2><i class="fas fa-crosshairs" style="margin-right: 0.5rem;"></i>The Challenge</h2>
+            <p>As a Cloud Engineer, hosting a static portfolio on a basic web server wasn't enough. I needed to build a highly scalable, secure, and production-ready environment that practically demonstrates my skills in containerization and cloud hosting.</p>
+            <p>The system needed to:</p>
+            <ul>
+                <li>Scale to zero automatically to minimize cloud costs.</li>
+                <li>Serve static HTML/CSS/JS via a lightweight Nginx container.</li>
+                <li>Map to a custom domain with managed SSL certificates.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2><i class="fas fa-project-diagram" style="margin-right: 0.5rem;"></i>Architecture Overview</h2>
+            <p>The solution uses a fully Google Cloud-native architecture with Docker containerization and a managed serverless runtime environment.</p>
+            <div class="img-box">
+                <img src="assets/portfolio_architecture.svg" alt="GCP Architecture Diagram showing Developer pushing to Artifact Registry and deploying to Cloud Run, while Users connect via Cloud Domains.">
+                <p>Fig 1. GCP Architecture &mdash; Serverless Portfolio Deployment</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2><i class="fas fa-stream" style="margin-right: 0.5rem;"></i>How It Works</h2>
+            <div class="flow-grid">
+                <div class="flow-step">
+                    <div class="step-num">Step 01 &mdash; Containerize</div>
+                    <h3>Docker & Nginx</h3>
+                    <p>The HTML, CSS, and JS files are packaged into a lightweight Alpine Nginx Docker image to ensure consistent performance across environments.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-num">Step 02 &mdash; Provision</div>
+                    <h3>GCP Console & CLI</h3>
+                    <p>Google Cloud Run service and Artifact Registry were provisioned securely using the GCP Console and the gcloud CLI.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-num">Step 03 &mdash; Host</div>
+                    <h3>Artifact Registry</h3>
+                    <p>The built Docker image is pushed to Google Artifact Registry, establishing a secure and version-controlled repository for the application.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-num">Step 04 &mdash; Serve</div>
+                    <h3>Cloud Run & Domains</h3>
+                    <p>Cloud Run pulls the image and serves the site. GCP Domain Mapping connects my custom domain and provisions a free managed SSL certificate.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2><i class="fas fa-code" style="margin-right: 0.5rem;"></i>Implementation</h2>
+            <p>The deployment is handled via the Google Cloud CLI. Here are the commands used to securely build the image and deploy the serverless Cloud Run environment:</p>
+            <ul>
+                <li style="margin-bottom: 1.5rem;">
+                    <strong style="color: #fff;">1. Build and push the Docker image to Artifact Registry:</strong>
+                    <div class="code-snippet" style="margin-top: 0.5rem; margin-bottom: 0; padding: 0.75rem;">gcloud builds submit --tag europe-west4-docker.pkg.dev/[PROJECT_ID]/portfolio-repo/portfolio-image:latest .</div>
+                </li>
+                <li style="margin-bottom: 1.5rem;">
+                    <strong style="color: #fff;">2. Deploy the container to Cloud Run:</strong>
+                    <div class="code-snippet" style="margin-top: 0.5rem; margin-bottom: 0; padding: 0.75rem;">gcloud run deploy portfolio-website \<br>&nbsp;&nbsp;--image europe-west4-docker.pkg.dev/[PROJECT_ID]/portfolio-repo/portfolio-image:latest \<br>&nbsp;&nbsp;--region europe-west4 \<br>&nbsp;&nbsp;--allow-unauthenticated</div>
+                </li>
+                <li style="margin-bottom: 0;">
+                    <strong style="color: #fff;">3. Map Custom Domain (Supported Region):</strong>
+                    <div class="code-snippet" style="margin-top: 0.5rem; margin-bottom: 0; padding: 0.75rem;">gcloud beta run domain-mappings create \<br>&nbsp;&nbsp;--service portfolio-website \<br>&nbsp;&nbsp;--domain [YOUR_CUSTOM_DOMAIN] \<br>&nbsp;&nbsp;--region europe-west4</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2><i class="fas fa-layer-group" style="margin-right: 0.5rem;"></i>Tech Stack</h2>
+            <div style="margin-top: 1rem;">
+                <span class="tech-badge"><i class="fab fa-google" style="margin-right: 4px;"></i>Cloud Run</span>
+                <span class="tech-badge"><i class="fab fa-google" style="margin-right: 4px;"></i>Artifact Registry</span>
+                <span class="tech-badge"><i class="fab fa-google" style="margin-right: 4px;"></i>Cloud Domains</span>
+                <span class="tech-badge"><i class="fab fa-docker" style="margin-right: 4px;"></i>Docker</span>
+                <span class="tech-badge"><i class="fas fa-server" style="margin-right: 4px;"></i>Nginx</span>
+            </div>
+        </div>
+
+        <div class="content-section" style="background: rgba(30, 41, 59, 0.5); padding: 2rem; border-radius: 8px; border: 1px dashed #4285F4;">
+            <h2><i class="fas fa-rocket" style="margin-right: 0.5rem;"></i>Future Improvements</h2>
+            <p>To further align with modern DevOps practices, the next phases of this project involve fully automating the deployment lifecycle:</p>
+            <ul style="margin-bottom: 0;">
+                <li style="margin-bottom: 0.5rem;"><strong>Infrastructure as Code (Terraform):</strong> I plan to transition away from manual/CLI provisioning and define the entire GCP infrastructure (Artifact Registry, Cloud Run, IAM) declaratively using Terraform.</li>
+                <li style="margin-bottom: 0;"><strong>CI/CD Pipeline (GitHub Actions):</strong> Setting up automated workflows so that every code push triggers a new Docker build and seamlessly deploys the latest version to Cloud Run without manual intervention.</li>
+            </ul>
+        </div>
+
+    </article>
+
+    <div class="container" style="text-align: center; padding: 3rem 0; border-top: 1px solid #334155; margin-top: 2rem;">
+        <a href="projects.html" class="btn-outline">&larr; All Projects</a>
+    </div>
+
+    <footer>
+        <p class="mono">&copy; 2026 Abdulrahman Alameer. <a href="index.html" style="color:var(--accent-blue)">Return Home</a></p>
+    </footer>
+
+</body>
+</html>
