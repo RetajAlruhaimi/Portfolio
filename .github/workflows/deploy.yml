@@ -1,4 +1,8 @@
 name: Deploy Portfolio
+
+permissions:
+  id-token: write
+  contents: read
 on:
   push:
     branches: [ main ] # This triggers the robot every time you push code
